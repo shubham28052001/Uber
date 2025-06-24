@@ -63,7 +63,7 @@ module.exports.loginUser = async (req, res, next) => {
   // ✅ Set cookie with proper options
   res.cookie('token', token)
   // ✅ Optional: return token in body too (for testing)
-  res.status(200).json({ message: "Login successful", user });
+  res.status(200).json({ message: "Login successful", user ,token});
 };
  
 

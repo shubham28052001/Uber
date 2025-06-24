@@ -5,8 +5,9 @@ const bcrypt = require('bcrypt');
 module.exports.registerCaptain = async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
+    console.log("Validation Errors:", errors.array()); // 🪵 log this
+    return res.status(400).json({ errors: errors.array() });
+}
 
     const { fullname, email, password, vehicle, location } = req.body;
 
@@ -24,7 +25,7 @@ module.exports.registerCaptain = async (req, res, next) => {
         vehicle,
         location  
     });
-
+   console.log("Received captain registration data:", req.body);
     const token = captain.generateAuthToken();
     res.status(201).json({ token, captain });
 }
