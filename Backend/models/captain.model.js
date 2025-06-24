@@ -44,7 +44,7 @@ const captainSchema = new mongoose.Schema({
         plate:{
             type: String,
             required: true,
-           min: [6, 'Plate must be at least 6 characters long'],
+           minlength: [6, 'Plate must be at least 6 characters long'],
         },
         capacity: {
             type: Number,

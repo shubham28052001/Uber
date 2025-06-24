@@ -22,16 +22,12 @@ router.post('/login',[
 userController.loginUser
 )
 
-router.post('/profile', [
-    body('email').isEmail().withMessage('Inavlid Email'),
-],
+router.get('/profile', 
 authMiddleware.authUser // Middleware to authenticate user
 ,userController.getUserProfile
 )
 
-router.post('/logout',[
-    body('email').isEmail().withMessage('Inavlid Email')
-], 
+router.get('/logout',
     authMiddleware.authUser, 
     userController.logoutUser
 );
