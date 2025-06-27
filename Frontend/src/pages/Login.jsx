@@ -71,7 +71,7 @@ const Login = () => {
           <button className='bg-[#111] font-semibold text-white text-2xl px-4 py-4 border-gray-300 rounded-md p-2 mb-4 w-full'>
             Login
           </button>
-          alert("Login succesfull");
+         alert("Login Successful")
         </form>
 
         <p className='text-center'>
